@@ -74,3 +74,49 @@ print("Num: \(bankAccount.accountNumber)")
 bankAccount.displayBlance()
 
 print(BankAccount.getMaxBalance())
+
+// class 상속
+class SavingAccount: BankAccount {
+    var interestRate: Float = 0.0
+    
+    
+    //@@@ override 로 초기화는 재정의가 불가능한지..?
+    init(number: Int, balance: Float, rate: Float) {
+        interestRate = rate
+        super.init(number: number, balance: balance)
+    }
+    
+    //BankAccount class를 상속 받았기 때문에 accountBalance 변수 사용가능
+    func claculateInterest() -> Float {
+        return interestRate * accountBalance
+    }
+    
+    // 상속받은 인스턴스 메서드를 재정의
+    override func displayBlance() {
+        super.displayBlance()
+        print("Prevailing intreset reate is \(interestRate)")
+    }
+    
+}
+
+print("-----------")
+var saivingAccount = SavingAccount(number: 12311, balance: 600.00, rate: 0.07)
+
+print(saivingAccount.claculateInterest())
+saivingAccount.displayBlance()
+
+
+//Extention
+extension Double {
+    var squared: Double {
+        return self * self
+    }
+    
+    var cubed: Double {
+        return self * self * self
+    }
+}
+
+
+let myValue: Double = 3.0
+print(myValue.squared)
