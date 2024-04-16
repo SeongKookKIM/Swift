@@ -39,3 +39,27 @@ var myClass2 = myClass1
 myClass2.name = "David"
 
 print(myClass1.name, myClass2.name)
+
+
+enum Temperature {
+    case hot
+    case warm
+    case cold(centigrade: Int)
+}
+
+func displayTempInfo (temp:Temperature) {
+    switch temp {
+    case .hot:
+        print("It's hot")
+    case .warm:
+        print("It's warm")
+    case .cold(let centigrade) where centigrade <= 0:
+        print("Ice warning: \(centigrade) defress.")
+    case .cold:
+        print("It's cold")
+    }
+}
+
+displayTempInfo(temp: .hot)
+displayTempInfo(temp: .cold(centigrade: -10))
+
