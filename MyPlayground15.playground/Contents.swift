@@ -39,3 +39,5 @@ func sendFile() -> String {
     }
     return "Successful transfer"
 }
+
+sendFile()
