@@ -26,6 +26,13 @@ func fileTransfer() throws  {
 
 
 func sendFile() -> String {
+    
+    defer {
+        // Finally와 유사한 기능, 파일 닫기 등 종료 준비
+        print("end of sendFile")
+    }
+    
+    
     do{
         try fileTransfer()
     } catch FileTransferError.noConnection {
@@ -34,10 +41,10 @@ func sendFile() -> String {
         print("Speed too low")
     } catch FileTransferError.fileNotFound {
         print("File Not Found")
-    } catch {
+    } catch let error {
         return "Unkonwn"
     }
     return "Successful transfer"
 }
 
-sendFile()
+print(sendFile())
