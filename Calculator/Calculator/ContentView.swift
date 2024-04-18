@@ -26,12 +26,12 @@ struct ContentView: View {
                 .font(.system(size: 35))
                 .padding()
                 .background(Color.gray.opacity(0.2))
-         
+            
             ForEach(buttons, id: \.self) {row in
                 HStack {
-                    ForEach(row, id: \.self) {buttonChar in
+                    ForEach(row, id: \.self) { buttonChar in
                         Button(action:{
-                            print(buttonChar)
+                            buttonTapped(buttonChar)
                         }){
                             Text(buttonChar)
                                 .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -43,6 +43,29 @@ struct ContentView: View {
                 }
             }
         }
+    }
+    func buttonTapped(_ button: String) {
+        
+        if(inputValue == "0") {
+            inputValue = ""
+        }
+        
+        switch button {
+        case "=":
+            print("Calcurate!")
+        case "C":
+            inputValue = "0"
+            
+        case "+","-","*","/":
+            if ["+","-","*","/"].contains(inputValue.suffix(1)) {
+                inputValue.removeLast()
+            }
+            inputValue += button
+            
+        default:
+            inputValue += button
+        }
+        
         
     }
 }
