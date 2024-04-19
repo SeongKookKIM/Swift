@@ -8,14 +8,24 @@
 import SwiftUI
 
 struct FirstTabView: View {
+    @State var title = "View One"
     var body: some View {
-        Text("View One")
+        Text(title)
             .onAppear(perform: {
                 print("onAppear Triggered")
             })
             .onDisappear(perform: {
                 print("onDisappear Triggered")
+                title = "View One Again"
             })
+            .task(priority: .background) {
+                title = await changeTitle()
+            }
+    }
+    
+    func changeTitle() async -> String {
+        sleep(5)
+        return "Async task complete"
     }
 }
 
