@@ -1,7 +1,6 @@
 
 
-import SwiftUI
-
+import Foundation
 import Combine
 
 class TimerData: ObservableObject {
@@ -13,7 +12,7 @@ class TimerData: ObservableObject {
                                      target: self,
                                      selector: #selector(timerDidFire),
                                      userInfo: nil,
-                                     repeats:true 
+                                     repeats: true
         )
     }
     
