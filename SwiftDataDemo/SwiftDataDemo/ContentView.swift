@@ -26,7 +26,7 @@ struct ContentView: View {
                         Button(action: {
                             toggleCompletion(for: task)
                         }) {
-                            Image(systemName: task.completed ? "checkmark.corcle.fill" : "circle")
+                            Image(systemName: task.completed ? "checkmark.circle.fill" : "circle")
                         }
                         Text(task.title)
                         Spacer()
