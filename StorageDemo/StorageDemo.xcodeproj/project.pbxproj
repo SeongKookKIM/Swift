@@ -11,6 +11,8 @@
 		A6CDC53A2BD5E25B00D165DA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CDC5392BD5E25B00D165DA /* ContentView.swift */; };
 		A6CDC53C2BD5E25E00D165DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6CDC53B2BD5E25E00D165DA /* Assets.xcassets */; };
 		A6CDC5402BD5E25E00D165DA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6CDC53F2BD5E25E00D165DA /* Preview Assets.xcassets */; };
+		A6CDC5472BD5E95300D165DA /* AppStorageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CDC5462BD5E95300D165DA /* AppStorageView.swift */; };
+		A6CDC5492BD5E96D00D165DA /* SceneStorageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CDC5482BD5E96D00D165DA /* SceneStorageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		A6CDC53B2BD5E25E00D165DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A6CDC53D2BD5E25E00D165DA /* StorageDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StorageDemo.entitlements; sourceTree = "<group>"; };
 		A6CDC53F2BD5E25E00D165DA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A6CDC5462BD5E95300D165DA /* AppStorageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStorageView.swift; sourceTree = "<group>"; };
+		A6CDC5482BD5E96D00D165DA /* SceneStorageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneStorageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,8 @@
 			children = (
 				A6CDC5372BD5E25B00D165DA /* StorageDemoApp.swift */,
 				A6CDC5392BD5E25B00D165DA /* ContentView.swift */,
+				A6CDC5462BD5E95300D165DA /* AppStorageView.swift */,
+				A6CDC5482BD5E96D00D165DA /* SceneStorageView.swift */,
 				A6CDC53B2BD5E25E00D165DA /* Assets.xcassets */,
 				A6CDC53D2BD5E25E00D165DA /* StorageDemo.entitlements */,
 				A6CDC53E2BD5E25E00D165DA /* Preview Content */,
@@ -139,8 +145,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6CDC5472BD5E95300D165DA /* AppStorageView.swift in Sources */,
 				A6CDC53A2BD5E25B00D165DA /* ContentView.swift in Sources */,
 				A6CDC5382BD5E25B00D165DA /* StorageDemoApp.swift in Sources */,
+				A6CDC5492BD5E96D00D165DA /* SceneStorageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +278,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"StorageDemo/Preview Content\"";
+				DEVELOPMENT_TEAM = VUW56J5QC2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -306,6 +315,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"StorageDemo/Preview Content\"";
+				DEVELOPMENT_TEAM = VUW56J5QC2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
