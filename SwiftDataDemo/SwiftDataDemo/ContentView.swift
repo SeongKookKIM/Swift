@@ -1,13 +1,8 @@
-//
-//  ContentView.swift
-//  SwiftDataDemo
-//
-//  Created by SeongKook on 4/22/24.
-//
-
 import SwiftUI
+import SwiftData
 
-class Task: Identifiable {
+@Model
+class Task {
     var id: UUID
     var title: String
     var completed: Bool
@@ -20,14 +15,8 @@ class Task: Identifiable {
 }
 
 struct ContentView: View {
-    
-    @State var tasks: [Task] = [Task(title:"Title1"),
-                         Task(title:"Title2"),
-                         Task(title:"Title3"),
-                         Task(title:"Title4"),
-                         Task(title:"Title5"),
-                         Task(title:"Title6")
-    ]
+    @Query var tasks: [Task]
+    @Environment(\.modelContext) var modelContext
     
     var body: some View {
         NavigationStack {
@@ -44,7 +33,7 @@ struct ContentView: View {
             }
             .navigationTitle("Tasks")
             .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
+                ToolbarItem(placement:.topBarTrailing) {
                     Button(action: addTask) {
                         Image(systemName: "plus")
                     }
@@ -54,11 +43,12 @@ struct ContentView: View {
     }
     
     func addTask() {
-        let newTask = Task(title: "New Task")
-        tasks.append(newTask)
+        let newTask = Task(title: "Task #\(tasks.count+1)")
+        modelContext.insert(newTask)
     }
 }
 
 #Preview {
     ContentView()
+        .modelContainer(for: Task.self)
 }
